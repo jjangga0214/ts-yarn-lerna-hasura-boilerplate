@@ -9,8 +9,9 @@
     "tools"
   ],
   "scripts": {
-    "start": "echo start",
-    "build": "lerna run build",
+    "start": "lerna run --parallel start",
+    "dev": "lerna run --parallel dev",
+    "build": "lerna run --parallel build",
     "build:fresh": "yarn clean && yarn build",
     "clean": "shx rm -rf .build-cache *.log && lerna run clean",
     "test": "lerna run --parallel test",
@@ -52,6 +53,7 @@
     "commitizen": "^4.0.3",
     "cross-env": "^6.0.3",
     "cz-conventional-changelog": "^3.0.2",
+    "dotenv-cli": "^3.1.0",
     "eslint": "^6.1.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-config-prettier": "^6.0.0",
