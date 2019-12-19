@@ -17,6 +17,12 @@ yarn dev
 # test packages/api, packages/hello
 yarn test
 
+# test packages/api, packages/hello, and measure coverage
+yarn coverage
+
+# open web browser and show coverage report
+yarn coverage:show
+
 # build packages/api, packages/hello
 yarn build
 
