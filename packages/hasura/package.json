@@ -6,6 +6,8 @@
     "start": "yarn dev",
     "dev": "dotenv -e ../../.env -- docker-compose up -d",
     "dev:debug": "dotenv -e ../../.env docker-compose up",
+    "down": "dotenv -e ../../.env -- docker-compose down",
+    "down:clean": "dotenv -e ../../.env -- docker-compose down --volumes",
     "console": "dotenv -e ../../.env hasura console",
     "migrate": "dotenv -e ../../.env hasura migrate",
     "apply": "dotenv -e ../../.env hasura migrate apply",
