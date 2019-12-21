@@ -35,7 +35,8 @@ module.exports = {
   // ],
 
   // A list of reporter names that Jest uses when writing coverage reports
-  coverageReporters: ['json', 'json-summary', 'text', 'lcov', 'clover'],
+  // coverageReporters: ['json', 'json-summary', 'text', 'lcov', 'clover'],
+  coverageReporters: ['json', 'json-summary', 'text', 'html'],
 
   // An object that configures minimum threshold enforcement for coverage results
   // coverageThreshold: null,
@@ -109,7 +110,7 @@ module.exports = {
   // rootDir: null,
 
   // A list of paths to directories that Jest should use to search for files in
-  roots: ['test'],
+  // roots: ['<rootDir>'],
 
   // Allows you to use a custom runner instead of Jest's default test runner
   // runner: "jest-runner",
