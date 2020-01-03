@@ -5,8 +5,7 @@
   "license": "MIT",
   "private": true,
   "workspaces": [
-    "packages/**",
-    "tools"
+    "packages/**"
   ],
   "scripts": {
     "start": "lerna run --parallel start",
