@@ -4,14 +4,16 @@
   "private": true,
   "scripts": {
     "start": "yarn dev",
-    "dev": "dotenv -e ../../.env -- docker-compose up -d",
-    "dev:debug": "dotenv -e ../../.env docker-compose up",
-    "down": "dotenv -e ../../.env -- docker-compose down",
-    "down:clean": "dotenv -e ../../.env -- docker-compose down --volumes",
-    "console": "dotenv -e ../../.env hasura console",
-    "migrate": "dotenv -e ../../.env hasura migrate",
-    "apply": "dotenv -e ../../.env hasura migrate apply",
-    "rollback": "dotenv -e ../../.env hasura migrate apply --down"
+    "_":"dotenv -e ../../.env -e .env --",
+    "dev": "yarn _ docker-compose up -d",
+    "dev:debug": "yarn _ docker-compose up",
+    "down": "yarn _ docker-compose down",
+    "down:clean": "yarn _ docker-compose down --volumes",
+    "hasura:_": "yarn _ hasura --project .",
+    "console": "yarn hasura:_ console",
+    "migrate": "yarn hasura:_ migrate",
+    "apply": "yarn hasura:_ migrate apply",
+    "rollback": "yarn hasura:_ migrate apply --down"
   },
   "devDependencies": {
     "hasura-cli": "^1.0.0-rc.1"
