@@ -27,7 +27,7 @@ services:
         protocol: tcp
         mode: host
     volumes:
-      - ./hasura/migrations:/hasura-migrations
+      - ./migrations:/hasura-migrations
     depends_on:
       - "postgres"
     restart: always

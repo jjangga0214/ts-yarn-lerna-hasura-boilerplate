@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "start": "lerna run --parallel start",
-    "dev": "lerna run --parallel dev",
+    "dev": "lerna run --parallel dev --scope '{@jjangga0214/api,@jjangga0214/hasura}'",
     "build": "lerna run --parallel build",
     "build:fresh": "yarn clean && yarn build",
     "clean": "shx rm -rf .build-cache *.log coverage junit.xml && lerna run clean",
