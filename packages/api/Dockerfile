@@ -31,4 +31,4 @@ RUN yarn install --production --silent
 RUN rm -rf $(yarn cache dir)
 WORKDIR /repo/packages/api
 EXPOSE ${API_ENDPOINT_PORT}
-CMD ["yarn", "start"]
+CMD ["yarn", "workspace", "@jjangga0214/api", "start"]
