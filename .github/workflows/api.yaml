@@ -32,7 +32,7 @@ jobs:
             ${{ runner.os }}-yarn-
 
       - name: yarn install
-        run: yarn
+        run: yarn install
       - name: lint
         run: yarn lint packages/${{ matrix.package }}
       - name: lint:md
