@@ -8,6 +8,7 @@
     "packages/**"
   ],
   "scripts": {
+    "pkg": "yarn workspace @jjangga0214/$PACKAGE",
     "start": "lerna run --parallel start",
     "dev": "lerna run --parallel dev --scope '{@jjangga0214/api,@jjangga0214/hasura}'",
     "build": "lerna run --parallel build",

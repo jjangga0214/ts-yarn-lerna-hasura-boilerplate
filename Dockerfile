@@ -13,13 +13,11 @@ RUN npx lerna exec --parallel -- del "*" "!package.json" "!dist"
 FROM node:12-alpine
 ARG PACKAGE
 # [WARN] Do not modify this env var at runtime
-ENV MAIN_PACKAGE ${PACKAGE}
+ENV PACKAGE ${PACKAGE}
 WORKDIR /repo
 COPY --from=builder /repo/packages/ ./packages/
 COPY --from=builder /repo/package.json ./
 COPY --from=builder /repo/LICENSE ./
-
-# TODO only install production dependencies
 RUN yarn install --production
 EXPOSE 8080
-CMD ["sh", "-c", "yarn", "workspace", "@jjangga0214/$MAIN_PACKAGE", "start"]
+CMD ["yarn", "pkg", "start"]
