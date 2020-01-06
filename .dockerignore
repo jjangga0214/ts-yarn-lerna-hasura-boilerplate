@@ -1,11 +1,11 @@
 **/node_modules
+*.md
 .vscode
 .github
 .git*
 .dockerignore
-**/*.env
-*.md
 .editorconfig
+**/*.env
 .eslintignore
 .eslintrc.*
 .markdownlint.*
@@ -15,8 +15,10 @@ commitlint.config.*
 **/jest.config.*
 reports
 junit.xml
-dist
-.build-cache
+**/dist
+# .e.g .build-cache
+**/*cache*
+!.yarn-cache
 # Created by https://www.gitignore.io/api/node,intellij+all,visualstudiocode
 # Edit at https://www.gitignore.io/?templates=node,intellij+all,visualstudiocode
 
