@@ -34,7 +34,7 @@ jobs:
             ${{ runner.os }}-yarn-
 
       - name: yarn install
-        run: yarn install
+        run: yarn install --silent --frozen-lockfile
       - name: lint
         run: yarn lint .
       - name: lint:md
