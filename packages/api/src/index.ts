@@ -23,7 +23,7 @@ server.start(
     port:
       process.env.ENV === 'development'
         ? process.env.API_ENDPOINT_PORT || 8080
-        : 8080,
+        : process.env.PORT || 8080,
   },
-  () => console.log(`@jjangga0214/api is running`),
+  () => console.log(`@jjangga0214/api is running.`),
 )
