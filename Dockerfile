@@ -1,23 +1,23 @@
 FROM node:12-alpine AS builder
-
+ARG PACKAGE
+ENV PACKAGE ${PACKAGE}
 WORKDIR /repo
 COPY . .
-RUN yarn install --silent
-WORKDIR /repo/packages/${PACKAGE}
-RUN yarn build
-WORKDIR /repo
-RUN npx ts-node workflow-helper/build/prune-packages.ts
-# delete everythings in each package except their package.json and dist
-RUN npx lerna exec --parallel -- del "*" "!package.json" "!dist"
+RUN yarn install --silent --frozen-lockfile
+RUN yarn pkg build
+RUN npx ts-node workflow-helper/build/prune-clean.ts
 
 FROM node:12-alpine
 ARG PACKAGE
-# [WARN] Do not modify this env var at runtime
+# [WARN] Do not override this env var at runtime
 ENV PACKAGE ${PACKAGE}
+ENV PORT 8080
 WORKDIR /repo
 COPY --from=builder /repo/packages/ ./packages/
 COPY --from=builder /repo/package.json ./
+COPY --from=builder /repo/yarn.lock ./
 COPY --from=builder /repo/LICENSE ./
-RUN yarn install --production
-EXPOSE 8080
+RUN yarn install --production --silent --frozen-lockfile
+RUN yarn cache clean
+EXPOSE ${PORT}
 CMD ["yarn", "pkg", "start"]
