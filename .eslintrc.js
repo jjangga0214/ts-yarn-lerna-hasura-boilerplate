@@ -55,6 +55,7 @@ module.exports = {
       rules: {
         ...common.rules,
         '@typescript-eslint/explicit-function-return-type': 'off',
+        '@typescript-eslint/member-delimiter-style': 'off',
       },
       settings: {
         'import/resolver': {
