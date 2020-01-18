@@ -13,6 +13,7 @@
     "dev": "lerna run --parallel dev --scope '{@jjangga0214/api,@jjangga0214/hasura}'",
     "build": "lerna run --parallel build",
     "build:fresh": "yarn clean && yarn build",
+    "build:image": "cross-env docker build --build-arg PACKAGE=$PACKAGE -t $IMAGE_REGISTRY/api:$IMAGE_TAG .",
     "clean": "shx rm -rf .build-cache *.log coverage junit.xml && lerna run clean",
     "test": "jest",
     "test:ci": "jest --coverage --ci --reporters='jest-junit'",
