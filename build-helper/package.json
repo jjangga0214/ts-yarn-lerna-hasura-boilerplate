@@ -8,11 +8,8 @@
   },
   "private": true,
   "dependencies": {
-    "fs-extra": "^8.1.0",
-    "lerna": "^3.20.2"
-  },
-  "devDependencies": {
-    "@types/fs-extra": "^8.0.1",
+    "del": "^5.1.0",
+    "lerna": "^3.20.2",
     "ts-node": "^8.6.2",
     "typescript": "^3.7.5"
   }
