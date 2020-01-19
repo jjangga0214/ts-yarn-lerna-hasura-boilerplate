@@ -1,3 +1,8 @@
+k8s
+packages/hasura
+packages/*/dist
+packages/*/test
+#
 **/node_modules
 *.md
 .vscode
@@ -6,6 +11,7 @@
 .dockerignore
 .editorconfig
 **/*.env
+**/env.*
 .eslintignore
 .eslintrc.*
 .markdownlint.*
@@ -15,7 +21,6 @@ commitlint.config.*
 **/jest.config.*
 reports
 junit.xml
-**/dist
 # .e.g .build-cache
 **/*cache*
 !.yarn-cache

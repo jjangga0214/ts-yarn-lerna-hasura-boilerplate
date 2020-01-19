@@ -17,9 +17,10 @@ async function cleanRoot() {
       `!${rootPath}/node_modules`,
       `!${rootPath}/LICENSE`,
       `!${rootPath}/yarn.lock`, // For debugging
+      `!${rootPath}/lerna.json`, // For postprocessing, lerna is needed in Dockerfile.
     ],
     {
-      force: true, // enable deleting path outside of cwd
+      force: true, // Enable deleting path outside of cwd
     },
   )
 }
@@ -42,7 +43,7 @@ async function cleanPkg() {
         `!${pkgPath}/yarn.lock`, // For debugging
       ],
       {
-        force: true, // enable deleting path outside of cwd
+        force: true, // Enable deleting path outside of cwd
       },
     )
   }
