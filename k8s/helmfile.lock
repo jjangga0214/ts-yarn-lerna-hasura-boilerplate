@@ -1,0 +1,7 @@
+version: v0.98.2
+dependencies:
+- name: gloo
+  repository: https://storage.googleapis.com/solo-public-helm
+  version: 1.3.2
+digest: sha256:702197d8c50423368041f4b5a945ea6f719888c7565587e32c91b596020e8d37
+generated: "2020-01-19T22:02:08.870007056+09:00"
