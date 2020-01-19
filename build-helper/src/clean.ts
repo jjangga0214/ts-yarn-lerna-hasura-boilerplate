@@ -14,7 +14,6 @@ async function cleanRoot() {
       `!${rootPath}`,
       `!${rootPath}/packages`,
       `!${rootPath}/package.json`,
-      `!${rootPath}/node_modules`,
       `!${rootPath}/LICENSE`,
       `!${rootPath}/yarn.lock`, // For debugging
       `!${rootPath}/lerna.json`, // For postprocessing, lerna is needed in Dockerfile.
