@@ -10,6 +10,8 @@ repositories:
     url: https://storage.googleapis.com/solo-public-helm
 
 releases:
+  - name: base
+    chart: ./base
   - name: knative
     chart: ./knative
   - name: gloo
@@ -18,6 +20,3 @@ releases:
     version: 1.3.2
     values:
       - values/gloo.yaml
-
-helmfiles:
-  - path: ./helmfile.base.yaml
