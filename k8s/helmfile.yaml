@@ -10,11 +10,14 @@ repositories:
     url: https://storage.googleapis.com/solo-public-helm
 
 releases:
-  - name: base
-    chart: ./base
-    wait: true
-
+  - name: knative
+    chart: ./knative
   - name: gloo
     chart: gloo/gloo
     namespace: gloo-system
     version: 1.3.2
+    values:
+      - values/gloo.yaml
+
+helmfiles:
+  - path: ./helmfile.base.yaml

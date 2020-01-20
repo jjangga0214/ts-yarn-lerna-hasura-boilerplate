@@ -1,0 +1,5 @@
+releases:
+  - name: base
+    chart: ./base
+  - name: knative-crd
+    chart: ./knative-crd

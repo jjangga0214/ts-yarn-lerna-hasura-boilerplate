@@ -1,0 +1,7 @@
+# gateway:
+#   enabled: false
+settings:
+  integrations:
+    knative:
+      enabled: true
+      version: 0.11.1
